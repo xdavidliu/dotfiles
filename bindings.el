@@ -129,12 +129,12 @@
 ;; (global-set-key (kbd "M-l") 'ignore) ;; downcase-word
 
 ;; these don't work in bash
-(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
-(global-set-key (kbd "M-k") 'kill-current-buffer) ;; kill-sentence
+;; (global-set-key (kbd "M-k") 'ignore) ;; kill-sentence
 ;; (global-set-key (kbd "M-e") 'ignore) ;; forward-sentence
 ;; (global-set-key (kbd "M-a") 'ignore) ;; backward-sentence
 
-;; (global-set-key (kbd "C-q") 'ignore) ;; quoted-insert
+(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-q") 'kill-current-buffer) ;; quoted-insert
 ;; (global-set-key (kbd "M-q") 'ignore) ;; fill-paragraph
 
 ;; (global-set-key (kbd "M-u") 'ignore) ;; upcase-word
