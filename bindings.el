@@ -101,6 +101,7 @@
   (message (concat "copied filename " (buffer-file-name))))
 
 (define-key input-decode-map (kbd "C-m") [C-m])
+;; this has been taken by another set of bindings, so don't use this
 ;; (global-set-key (kbd "<C-m>") 'ignore)
 ;; M-m moves to first non-whitespace character
 
