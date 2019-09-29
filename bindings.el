@@ -125,7 +125,7 @@
 
 (global-set-key (kbd "M-t") 'visual-line-mode) ;; transpose-words
 (global-set-key (kbd "C-t") 'toggle-truncate-lines) ;; transpose-chars
-;; (global-set-key (kbd "M-c") 'ignore) ;; capitalize-word
+(global-set-key (kbd "M-c") 'compile) ;; capitalize-word
 
 ;; C-j is newline without indentation, which might be useful
 (global-set-key (kbd "M-j") 'find-file) ;; indent-new-comment-line
