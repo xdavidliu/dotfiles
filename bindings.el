@@ -4,6 +4,10 @@
 ;; like C-f for forward-char, C-w and A-w for cut and copy, and C-y for paste,
 ;; etc. etc.
 
+;; to match Gnome terminal copy and paste
+(global-set-key (kbd "C-S-c") 'kill-ring-save)
+(global-set-key (kbd "C-S-v") 'yank)
+
 (defun kill-ring-save-line ()
   (interactive)
   (kill-ring-save (line-beginning-position) (line-end-position)))
