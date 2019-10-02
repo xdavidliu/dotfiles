@@ -3,6 +3,6 @@
 path () {
   # usage: path foo.txt
   FILE="$(readlink -f $1)"
-  printf "$FILE\ncopied to clipboard"
+  printf "$FILE\ncopied to clipboard\n"
   printf "$FILE" | xsel -bi
 }
