@@ -6,3 +6,7 @@ path () {
   printf "$FILE\ncopied to clipboard\n"
   printf "$FILE" | xsel -bi
 }
+
+h () {
+  $1 --help | less
+}
