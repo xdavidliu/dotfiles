@@ -30,4 +30,8 @@ if [ -d /sys/module/battery ]; then
       sudo su -c "echo $1 > $FILE"
     fi
   }
+  bat () {
+    echo -n 'current battery level is '
+    cat /sys/class/power_supply/BAT0/capacity
+  }
 fi
