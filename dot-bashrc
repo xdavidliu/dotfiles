@@ -8,7 +8,11 @@ path () {
 }
 
 h () {
-  $1 --help | less
+  if command -v $1 > /dev/null; then
+    $1 --help | less
+  else
+    echo "command $1 doesn't exist"
+  fi
 }
 
 # the if statement checks if we are on a laptop
