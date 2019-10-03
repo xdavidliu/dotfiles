@@ -24,10 +24,11 @@ if [ -d /sys/module/battery ]; then
   }
   dim () {
     local FILE=/sys/class/backlight/intel_backlight/brightness
-    if [ $# -eq 0 ]; then
-      cat $FILE
-    else
+    echo "current brightness is $(cat $FILE)"
+    if [ $# -ne 0 ]; then
+      echo "setting brightness to $1..."
       sudo su -c "echo $1 > $FILE"
+      echo 'done!'
     fi
   }
   bat () {
