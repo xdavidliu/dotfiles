@@ -109,8 +109,14 @@
 ;; (global-set-key (kbd "<C-m>") 'ignore)
 ;; M-m moves to first non-whitespace character
 
+;; usage: copy full pathname of an .info file, then hit this button to
+;;   automatically open it. Equivalent to C-u F1 C-y <return>
+(defun open-info-filepath-from-clipbard ()
+  (interactive)
+  (info (current-kill 0)))
+
 (define-key input-decode-map (kbd "C-[") [C-bracketleft])
-;; (global-set-key (kbd "C-<bracketleft>") 'ignore)
+(global-set-key (kbd "C-<bracketleft>") 'open-info-filepath-from-clipbard)
 ;; "C-]" is abort-recursive-edit; useful for leaving minibuffer
 ;; (global-set-key (kbd "M-[") 'ignore)
 ;; (global-set-key (kbd "M-]") 'ignore)
