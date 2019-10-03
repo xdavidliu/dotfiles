@@ -134,7 +134,7 @@
 (global-set-key (kbd "M-c") 'compile) ;; capitalize-word
 
 ;; C-j is newline without indentation, which might be useful
-(global-set-key (kbd "M-j") 'find-file) ;; indent-new-comment-line
+;; (global-set-key (kbd "M-j") 'ignore) ;; indent-new-comment-line
 
 ;; C-l is recenter-top-bottom
 ;; (global-set-key (kbd "M-l") 'ignore) ;; downcase-word
@@ -152,8 +152,11 @@
 
 (global-set-key (kbd "C-h") 'mark-whole-buffer) ;; help prefix, same as F1
 
-;; (global-set-key (kbd "C-,") 'ignore)
-;; (global-set-key (kbd "M-,") 'ignore) ;; xref-pop-marker-stack
+(defun find-filename-from-clipboard ()
+  (interactive)
+  (find-file (current-kill 0)))
+(global-set-key (kbd "C-,") 'find-filename-from-clipboard)
+(global-set-key (kbd "M-,") 'find-file) ;; xref-pop-marker-stack
 ;; (global-set-key (kbd "C-.") 'ignore)
 ;; (global-set-key (kbd "M-.") 'ignore) ;; xref-find-definitions
 
