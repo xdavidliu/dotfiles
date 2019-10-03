@@ -109,14 +109,8 @@
 ;; (global-set-key (kbd "<C-m>") 'ignore)
 ;; M-m moves to first non-whitespace character
 
-;; usage: copy full pathname of an .info file, then hit this button to
-;;   automatically open it. Equivalent to C-u F1 C-y <return>
-(defun open-info-filepath-from-clipbard ()
-  (interactive)
-  (info (current-kill 0)))
-
 (define-key input-decode-map (kbd "C-[") [C-bracketleft])
-(global-set-key (kbd "C-<bracketleft>") 'open-info-filepath-from-clipbard)
+;; (global-set-key (kbd "C-<bracketleft>") 'ignore)
 ;; "C-]" is abort-recursive-edit; useful for leaving minibuffer
 ;; (global-set-key (kbd "M-[") 'ignore)
 ;; (global-set-key (kbd "M-]") 'ignore)
@@ -152,10 +146,15 @@
 
 (global-set-key (kbd "C-h") 'mark-whole-buffer) ;; help prefix, same as F1
 
-(defun find-filename-from-clipboard ()
+;; take last copied string from clipboard, treat it as a filename, and
+;; either use info on it if it ends in '.info', or visit it otherwise
+(defun visit-or-info-from-clipbard ()
   (interactive)
-  (find-file (current-kill 0)))
-(global-set-key (kbd "C-,") 'find-filename-from-clipboard)
+  (let ((filename (current-kill 0)))
+    (if (string-suffix-p ".info" filename)
+	(info filename)
+      (find-file filename))))
+(global-set-key (kbd "C-,") 'visit-or-info-from-clipbard)
 (global-set-key (kbd "M-,") 'find-file) ;; xref-pop-marker-stack
 ;; (global-set-key (kbd "C-.") 'ignore)
 ;; (global-set-key (kbd "M-.") 'ignore) ;; xref-find-definitions
