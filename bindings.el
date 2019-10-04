@@ -146,14 +146,17 @@
 
 (global-set-key (kbd "C-h") 'mark-whole-buffer) ;; help prefix, same as F1
 
+(defun find-or-info-file (filename)
+  (if (string-suffix-p ".info" filename)
+      (info filename)
+    (find-file filename)))
+
 ;; take last copied string from clipboard, treat it as a filename, and
 ;; either use info on it if it ends in '.info', or visit it otherwise
 (defun visit-or-info-from-clipbard ()
   (interactive)
-  (let ((filename (current-kill 0)))
-    (if (string-suffix-p ".info" filename)
-	(info filename)
-      (find-file filename))))
+  (find-or-info-file (current-kill 0)))
+
 (global-set-key (kbd "C-,") 'visit-or-info-from-clipbard)
 (global-set-key (kbd "M-,") 'find-file) ;; xref-pop-marker-stack
 ;; (global-set-key (kbd "C-.") 'ignore)
