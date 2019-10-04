@@ -162,9 +162,7 @@
 ;; (global-set-key (kbd "C-.") 'ignore)
 ;; (global-set-key (kbd "M-.") 'ignore) ;; xref-find-definitions
 
-;; reserved by corp
 ;; (global-set-key (kbd "C-=") 'ignore)
-
 ;; (global-set-key (kbd "M-=") 'ignore) ;; count-words-region
 ;; (global-set-key (kbd "C--") 'ignore) ;; negative-argument
 ;;                      "M--" is also negative-argument
