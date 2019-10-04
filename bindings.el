@@ -153,11 +153,11 @@
 
 ;; take last copied string from clipboard, treat it as a filename, and
 ;; either use info on it if it ends in '.info', or visit it otherwise
-(defun visit-or-info-from-clipbard ()
+(defun find-or-info-clipbard ()
   (interactive)
   (find-or-info-file (current-kill 0)))
 
-(global-set-key (kbd "C-,") 'visit-or-info-from-clipbard)
+(global-set-key (kbd "C-,") 'find-or-info-clipbard)
 (global-set-key (kbd "M-,") 'find-file) ;; xref-pop-marker-stack
 ;; (global-set-key (kbd "C-.") 'ignore)
 ;; (global-set-key (kbd "M-.") 'ignore) ;; xref-find-definitions
