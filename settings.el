@@ -12,3 +12,5 @@
 (customize-set-variable 'tool-bar-mode nil)
 (customize-set-variable 'inhibit-startup-screen t)
 (customize-set-variable 'make-backup-files nil)
+(customize-set-variable 'show-paren-mode t)
+(customize-set-variable 'truncate-lines t)
