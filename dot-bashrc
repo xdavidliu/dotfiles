@@ -46,3 +46,20 @@ if [ -d /sys/module/battery ]; then
     cat /sys/class/power_supply/BAT0/capacity
   }
 fi
+
+current_window_class_has_substring () {
+  local id=`xdotool getactivewindow`
+  if xprop WM_CLASS -id $id | grep $1 > /dev/null; then
+    return 0 # true
+  else
+    return 1 # false
+  fi
+}
+
+chrome-window-active () {
+  if current_window_class_has_substring chrome; then
+    return 0
+  else
+    return 1
+  fi
+}
