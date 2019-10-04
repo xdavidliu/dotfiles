@@ -14,3 +14,5 @@
 (customize-set-variable 'make-backup-files nil)
 (customize-set-variable 'show-paren-mode t)
 (customize-set-variable 'truncate-lines t)
+
+(add-hook 'text-mode-hook 'visual-line-mode)
