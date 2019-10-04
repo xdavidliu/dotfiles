@@ -105,7 +105,7 @@
   (message (concat "copied filename " (buffer-file-name))))
 
 (define-key input-decode-map (kbd "C-m") [C-m])
-;; this has been taken by another set of bindings, so don't use this
+;; reserved by corp
 ;; (global-set-key (kbd "<C-m>") 'ignore)
 ;; M-m moves to first non-whitespace character
 
@@ -159,7 +159,9 @@
 ;; (global-set-key (kbd "C-.") 'ignore)
 ;; (global-set-key (kbd "M-.") 'ignore) ;; xref-find-definitions
 
+;; reserved by corp
 ;; (global-set-key (kbd "C-=") 'ignore)
+
 ;; (global-set-key (kbd "M-=") 'ignore) ;; count-words-region
 ;; (global-set-key (kbd "C--") 'ignore) ;; negative-argument
 ;;                      "M--" is also negative-argument
