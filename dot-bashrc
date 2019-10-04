@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# if change filename, also change in bindings.el
+BASH_REMINDERS=~/Documents/bash-reminders.txt
+if [ -f "$BASH_REMINDERS" ]; then
+  cat $BASH_REMINDERS
+fi
+
 p () {
   # usage: path foo.txt
   FILE="$(readlink -f $1)"
