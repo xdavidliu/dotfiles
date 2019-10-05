@@ -23,7 +23,11 @@ h () {
 
 # the if statement checks if we are on a laptop
 # this works for Debian at least, not sure if works for Arch
-if [ -d /sys/module/battery ]; then
+# superuser.com/questions/877677/
+# the commented out version below gave false positive for desktop ubuntu
+# if [ -d /sys/module/battery ]; then
+
+if [ -d /proc/acpi/battery/BAT* ]; then
   # display battery percentage before each PS1
   PROMPT_COMMAND='echo -n $(</sys/class/power_supply/BAT0/capacity)'
   night () {
