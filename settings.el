@@ -16,3 +16,6 @@
 (customize-set-variable 'truncate-lines t)
 
 (add-hook 'text-mode-hook 'visual-line-mode)
+
+;; note there's also a cuda mode on Melpa
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
