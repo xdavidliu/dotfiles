@@ -27,8 +27,8 @@ if [ -d /sys/module/battery ]; then
   # display battery percentage before each PS1
   PROMPT_COMMAND='echo -n $(</sys/class/power_supply/BAT0/capacity)'
   night () {
-    local temp=${1:-4800}
-    local bright=${2:-1}
+    local temp=${2:-4800}
+    local bright=${1:-1}
     redshift -P -O $temp -b $bright > /dev/null
     echo "setting color temperature to $temp"
     echo "setting brightness to $bright"
