@@ -138,8 +138,11 @@
 ;; (global-set-key (kbd "M-e") 'ignore) ;; forward-sentence
 ;; (global-set-key (kbd "M-a") 'ignore) ;; backward-sentence
 
-(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
-(global-set-key (kbd "C-q") 'kill-current-buffer) ;; quoted-insert
+;; don't use this; I have C-q set to close window in Cinnamon,
+;; since a lot of programs already use this, like Nemo and VLC, and also
+;; C-q never means anything else, e.g. in Chrome it does nothing.
+;; (global-set-key (kbd "C-q") 'ignore) ;; quoted-insert
+
 ;; (global-set-key (kbd "M-q") 'ignore) ;; fill-paragraph
 
 ;; (global-set-key (kbd "M-u") 'ignore) ;; upcase-word
@@ -170,7 +173,9 @@
 ;; if gnome or cinnamon is capturing M-`, do this:
 ;; gsettings set org.cinnamon.desktop.keybindings.wm switch-group []
 ;; M-` is tmm-menubar, probably useful
-;; (global-set-key (kbd "C-`") 'ignore)
+
+(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-`") 'kill-current-buffer)
 ;; (global-set-key (kbd "C-'") 'ignore)
 ;; (global-set-key (kbd "M-'") 'ignore) ;; abbrev-prefix-mark
 
