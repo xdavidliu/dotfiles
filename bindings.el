@@ -28,9 +28,11 @@
 (global-set-key (kbd "M-z") 'switch-to-buffer) ;; zap-to-char
 (defun switch-to-other-buffer () (interactive) (switch-to-buffer nil))
 (global-set-key (kbd "C-z") 'switch-to-other-buffer) ;; suspend-frame
-(defun list-file-buffers ()
-  (interactive) (list-buffers t) (delete-window))
-(global-set-key (kbd "s-z") 'list-file-buffers)
+
+;; I had list-buffers here, which deleted my other windows
+;; Now that I'm saving window positions upon exiting emacs so I don't have
+;; to reopen where I left off, I won't use that anymore
+;; (global-set-key (kbd "s-z") 'ignore)
 
 (global-set-key (kbd "M-r") 'recentf-open-files)
 ;; move-to-window-line-top-bottom
@@ -38,7 +40,11 @@
 ;; digit-argument, already done by M-1
 ;; these are shorthand for C-x 1, etc.
 (global-set-key (kbd "C-0") 'delete-window)
-(global-set-key (kbd "C-1") 'delete-other-windows)
+
+;; don't use this, since I'm keeping window position after exiting now;
+;; instead use C-0 to individually close windows
+;; (global-set-key (kbd "C-1") 'delete-other-windows)
+
 (global-set-key (kbd "C-2") 'split-window-below)
 (global-set-key (kbd "C-3") 'split-window-right)
 ;; (global-set-key (kbd "C-4") 'ignore)
@@ -49,12 +55,10 @@
 ;; (global-set-key (kbd "C-9") 'ignore)
 ;; (global-set-key (kbd "C-0") 'ignore)
 
-;; shortened from C-x 5 2
-;; M for not conflicting with Cinnamon / GNOME window switching
-(global-set-key (kbd "M-s-2") 'make-frame-command)
+;; no shorthard for open new window, since that screws with the saved .desktop file
+;; use C-2 instead
 
 ;; M-s originally prefix key for search-map
-
 (defvar master-save-key (kbd "M-s"))
 ;; cannot use a let because of elisp lacking lexical scoping or something
 (global-set-key master-save-key 'save-buffer)
