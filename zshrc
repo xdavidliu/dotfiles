@@ -5,6 +5,12 @@ PS1='%B%F{green}%@ %1d%f%b '
 # for neofetch
 export SHELL=/usr/bin/zsh
 
+REMINDERS=~/Documents/reminders.txt
+if [ -f "$REMINDERS" ]; then
+  cat $REMINDERS
+fi
+
+
 p () {
   # usage: path foo.txt
   FILE="$(readlink -f $1)"
