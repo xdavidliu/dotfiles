@@ -10,6 +10,13 @@ if [ -f "$REMINDERS" ]; then
   cat $REMINDERS
 fi
 
+# zsh doesn't automatically store history
+# https://unix.stackexchange.com/questions/389881/history-isnt-preserved-in-zsh
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # word boundaries in zsh different from bash; alt-d doesn't
 # stop at /, see this
 # https://unix.stackexchange.com/questions/258656/how-can-i-delete-to-a-slash-or-a-word-in-zsh
