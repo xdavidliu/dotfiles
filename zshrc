@@ -10,6 +10,13 @@ if [ -f "$REMINDERS" ]; then
   cat $REMINDERS
 fi
 
+# word boundaries in zsh different from bash; alt-d doesn't
+# stop at /, see this
+# https://unix.stackexchange.com/questions/258656/how-can-i-delete-to-a-slash-or-a-word-in-zsh
+# update: simpler solution, though may not land on exact same character
+# https://stackoverflow.com/questions/10847255/how-to-make-zsh-forward-word-behaviour-same-as-in-bash-emacs
+autoload -U select-word-style
+select-word-style bash
 
 p () {
   # usage: path foo.txt
