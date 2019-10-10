@@ -25,6 +25,8 @@ setopt appendhistory
 autoload -U select-word-style
 select-word-style bash
 
+alias y='type'
+
 p () {
   # usage: path foo.txt
   FILE="$(readlink -f $1)"
