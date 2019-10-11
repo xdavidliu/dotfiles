@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-BASH_REMINDERS=~/Documents/bash-reminders.txt
-if [ -f "$BASH_REMINDERS" ]; then
-  cat $BASH_REMINDERS
+# TODO: change filename from dot-bashrc to bashrc, need to also
+# change references in ~/.bashrc files to source new name
+
+REMINDERS=~/Documents/reminders.txt
+if [ -f "$REMINDERS" ]; then
+  cat $REMINDERS
 fi
+
+# TODO: long names here and make _alias_ be p
+# that way the command "alias" can list all conveniently
 
 p () {
   # usage: path foo.txt
@@ -14,7 +20,7 @@ p () {
 
 h () {
   if command -v $1 > /dev/null; then
-    $1 --help | less
+    $1 --help |& less
   else
     echo "command $1 doesn't exist"
   fi
@@ -24,8 +30,6 @@ h () {
 # this works for Debian at least, not sure if works for Arch
 # superuser.com/questions/877677/
 # checking battery gives false positive for ubuntu desktop
-
-# if is laptop
 if [ $(cat /sys/class/dmi/id/chassis_type) -eq 10 ]; then
   # display battery percentage before each PS1
   PROMPT_COMMAND='echo -n $(</sys/class/power_supply/BAT0/capacity)'
@@ -47,20 +51,3 @@ if [ $(cat /sys/class/dmi/id/chassis_type) -eq 10 ]; then
     fi
   }
 fi
-
-current_window_class_has_substring () {
-  local id=`xdotool getactivewindow`
-  if xprop WM_CLASS -id $id | grep $1 > /dev/null; then
-    return 0 # true
-  else
-    return 1 # false
-  fi
-}
-
-chrome-window-active () {
-  if current_window_class_has_substring chrome; then
-    return 0
-  else
-    return 1
-  fi
-}
