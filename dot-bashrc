@@ -19,6 +19,18 @@ fi
 
 # TODO: add ssh key for git pushing to my github dotfiles
 
+alias t='type'
+
+pull_dotfiles_from_github () {
+  cd ~/dotfiles
+  git pull origin master
+}
+
+commit_and_push_dotfiles_to_github () {
+  cd ~/dotfiles
+  git commit -a && git push origin master
+}
+
 p () {
   # usage: path foo.txt
   FILE="$(readlink -f $1)"
