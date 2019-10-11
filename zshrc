@@ -1,5 +1,13 @@
 #!/usr/bin/zsh
 
+# update: as of 10/10/19, I'm switching back to bash. zsh is good in that
+# alias automatically inherit completion, unlike bash in which you have to
+# manually do C-M-e; but some programs I use elsewhere (bazel) were exclusively
+# designed for bash completion, and while there is zsh completion, it's
+# significantly slower. Also, using bash instead of zsh adheres to the
+# philosophy of "support"; e.g. don't stray too far from upstream support,
+# e.g. use Ubuntu instead of Arch Linux for CUDA.
+
 PS1='%B%F{green}%@ %1d%f%b '
 
 # for neofetch
