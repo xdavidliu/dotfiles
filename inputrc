@@ -1,0 +1,13 @@
+# usage: create simlink ~/.inputrc to this file, and bash automatically reads it
+# see: READLINE section in man bash
+
+# note you can get the key sequence chars by doing cat >> ~/.inputrc,
+# then ctrl-V to quoted insert, then ctrl-C to end the cat.
+
+# shift-tab
+"[Z": alias-expand-line
+
+# I wanted shift-space but that is all but impossible! Apparently in xterm
+# you can do it, but would have to first map shift-space to some other symbol
+# in .Xresources, then map that symbol to some bash function that does
+# alias-expand-line then self-insert space here in inputrc
