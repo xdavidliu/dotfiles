@@ -19,6 +19,8 @@ fi
 
 # TODO: add ssh key for git pushing to my github dotfiles
 
+# TODO: put aliases in separate file for simple reference
+
 alias t='type'
 
 pull_dotfiles_from_github () {
