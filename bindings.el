@@ -40,11 +40,7 @@
 ;; digit-argument, already done by M-1
 ;; these are shorthand for C-x 1, etc.
 (global-set-key (kbd "C-0") 'delete-window)
-
-;; don't use this, since I'm keeping window position after exiting now;
-;; instead use C-0 to individually close windows
-;; (global-set-key (kbd "C-1") 'delete-other-windows)
-
+(global-set-key (kbd "C-1") 'delete-other-windows)
 (global-set-key (kbd "C-2") 'split-window-below)
 (global-set-key (kbd "C-3") 'split-window-right)
 ;; (global-set-key (kbd "C-4") 'ignore)
