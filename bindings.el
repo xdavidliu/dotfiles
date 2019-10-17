@@ -116,7 +116,8 @@
 ;; (global-set-key (kbd "M-]") 'ignore)
 
 ;; some keys that are redundant but work like in Chrome, so I may or may not rebind these
-;; (global-set-key (kbd "C-<backspace>") 'ignore)
+(defun backward-kill-line () (interactive) (kill-line 0))
+(global-set-key (kbd "C-<backspace>") 'backward-kill-line)
 ;; (global-set-key (kbd "C-<delete>") 'ignore)
 
 ;; (global-set-key (kbd "S-<delete>") 'ignore)  ;; kill-region, same as C-w
