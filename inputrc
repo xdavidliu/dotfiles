@@ -7,6 +7,10 @@
 # shift-tab
 "[Z": alias-expand-line
 
+# note that C-M-e is by default shell-expand-line, and there is also
+# alias-expand-line and history-and-alias-expand-line.
+# source: superuser.com/questions/247770/
+
 # I wanted shift-space but that is all but impossible! Apparently in xterm
 # you can do it, but would have to first map shift-space to some other symbol
 # in .Xresources, then map that symbol to some bash function that does
