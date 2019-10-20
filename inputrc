@@ -5,7 +5,7 @@
 # then ctrl-V to quoted insert, then ctrl-C to end the cat.
 
 # shift-tab
-"[Z": alias-expand-line
+"[Z": shell-expand-line
 
 # note that C-M-e is by default shell-expand-line, and there is also
 # alias-expand-line and history-and-alias-expand-line.
