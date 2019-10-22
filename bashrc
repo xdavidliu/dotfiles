@@ -22,6 +22,10 @@ fi
 # TODO: put aliases in separate file for simple reference
 
 alias t='type'
+alias h='generalized_help'
+alias p='copy_path_to_clipboard'
+alias u='pull_dotfiles_from_github'
+alias y='commit_and_push_dotfiles_to_github'
 
 pull_dotfiles_from_github () {
   cd ~/dotfiles
@@ -33,14 +37,14 @@ commit_and_push_dotfiles_to_github () {
   git commit -a && git push origin master
 }
 
-p () {
+copy_path_to_clipboard () {
   # usage: path foo.txt
   FILE="$(readlink -f $1)"
   printf "$FILE\ncopied to clipboard\n"
   printf "$FILE" | xsel -bi
 }
 
-h () {
+generalized_help () {
   if command -v $1 > /dev/null; then
     $1 --help |& less
   else
