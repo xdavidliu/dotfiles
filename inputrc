@@ -7,6 +7,9 @@
 # shift-tab
 "[Z": shell-expand-line
 
+# originally just transposes character
+"\C-t": edit-and-execute-command
+
 # note that C-M-e is by default shell-expand-line, and there is also
 # alias-expand-line and history-and-alias-expand-line.
 # source: superuser.com/questions/247770/
