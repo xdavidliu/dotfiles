@@ -1,25 +1,11 @@
 #!/usr/bin/env bash
 
-# TODO: change filename from dot-bashrc to bashrc, need to also
-# change references in ~/.bashrc files to source new name
-
 REMINDERS=~/Documents/reminders.txt
 if [ -f "$REMINDERS" ]; then
   cat $REMINDERS
 fi
 
-# TODO: readline map C-space to whatever C-M-e does to expand
-# alias inline so you can tab complete them afterwards (e.g. what zsh
-# does automatically)
-
-# TODO: long names here and make _alias_ be p
-# that way the command "alias" can list all conveniently
-
-# TODO: single key to git pull origin master the dotfiles
-
 # TODO: add ssh key for git pushing to my github dotfiles
-
-# TODO: put aliases in separate file for simple reference
 
 alias t='type'
 alias h='generalized_help'
