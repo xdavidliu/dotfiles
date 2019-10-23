@@ -97,7 +97,11 @@
 ;; it looks complicated. Don't even bother; terminal emacs is basically
 ;; unusable.
 (define-key input-decode-map (kbd "C-i") [C-i])
-(global-set-key (kbd "<C-i>") 'copy-buffer-filename)
+
+;; taken by another one of my bindings elsewhere)
+;; (global-set-key (kbd "<C-i>") 'ignore)
+
+;; (global-set-key (kbd "M-i") 'copy-buffer-filename) ;; tab-to-tab-stop
 
 (defun copy-buffer-filename ()
   (interactive)

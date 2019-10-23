@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO: have commands and aliases that open emacsclient also use wmctrl
+# to switch to the emacs window
+
 REMINDERS=~/Documents/reminders.txt
 if [ -f "$REMINDERS" ]; then
   cat $REMINDERS
