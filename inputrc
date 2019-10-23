@@ -4,8 +4,8 @@
 # note you can get the key sequence chars by doing cat >> ~/.inputrc,
 # then ctrl-V to quoted insert, then ctrl-C to end the cat.
 
-# shift-tab. Note there's a space at end of command, which adds a space after expanding
-"[Z": "shell-expand-line "
+# shift-tab
+"[Z": shell-expand-line
 
 # originally just transposes character
 "\C-t": edit-and-execute-command
