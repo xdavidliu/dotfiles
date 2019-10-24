@@ -1,0 +1,5 @@
+escape ^Jj
+
+bindkey ^o detach
+# note cannot bind ctrl-q because of this:
+# unix.stackexchange.com/questions/308380
