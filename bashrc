@@ -10,12 +10,13 @@ fi
 
 # TODO: add ssh key for git pushing to my github dotfiles
 
-alias t='type'
-alias h='generalized_help'
-alias p='copy_path_to_clipboard'
-alias u='pull_dotfiles_from_github'
-alias y='commit_and_push_dotfiles_to_github'
-alias e='open_emacsclient_ampersand'
+alias a=alias
+alias t=type
+alias h=generalized_help
+alias p=copy_path_to_clipboard
+alias u=pull_dotfiles_from_github
+alias y=commit_and_push_dotfiles_to_github
+alias e=open_emacsclient_ampersand
 
 open_emacsclient_ampersand () {
   emacsclient $1 &
