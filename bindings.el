@@ -101,7 +101,7 @@
 ;; taken by another one of my bindings elsewhere)
 ;; (global-set-key (kbd "<C-i>") 'ignore)
 
-;; (global-set-key (kbd "M-i") 'copy-buffer-filename) ;; tab-to-tab-stop
+(global-set-key (kbd "M-i") 'copy-buffer-filename) ;; tab-to-tab-stop
 
 (defun copy-buffer-filename ()
   (interactive)
