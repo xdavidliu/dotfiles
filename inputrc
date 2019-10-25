@@ -4,10 +4,11 @@
 # note you can get the key sequence chars by doing cat >> ~/.inputrc,
 # then ctrl-V to quoted insert, then ctrl-C to end the cat.
 
-# shift-tab
-"[Z": shell-expand-line
-
-# TODO: add a space after the above
+# shift-tab sends a C-M-e and a space, former is shell-expand-line
+"[Z": "\e "
+# explanation: \e is escape, which in emacs lingo is same as holding meta,
+# the ^E was added in emacs using C-q quoted insert
+# only way to have multiple commands is to bind 
 # https://unix.stackexchange.com/questions/548726/bash-readline-inputrc-bind-key-to-a-sequence-of-multiple-commands/548732#548732
 
 # originally just transposes character
