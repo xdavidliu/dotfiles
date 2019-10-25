@@ -7,6 +7,9 @@
 # shift-tab
 "[Z": shell-expand-line
 
+# TODO: add a space after the above
+# https://unix.stackexchange.com/questions/548726/bash-readline-inputrc-bind-key-to-a-sequence-of-multiple-commands/548732#548732
+
 # originally just transposes character
 "\C-t": edit-and-execute-command
 
