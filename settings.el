@@ -16,6 +16,12 @@
 (customize-set-variable 'show-paren-mode t)
 (customize-set-variable 'truncate-lines t)
 
+(customize-set-variable 'tramp-use-ssh-controlmaster-options nil)
+;; counterintuitively, set tramp-use-ssh-controlmaster-options to nil
+;; to use the multiplexing settings in ~/.ssh/config
+;; see https://www.gnu.org/software/emacs/manual/html_node/tramp/Frequently-Asked-Questions.html
+
+
 (add-hook 'text-mode-hook 'visual-line-mode)
 
 ;; note there's also a cuda mode on Melpa
