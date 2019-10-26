@@ -5,6 +5,7 @@
 ;; it will say something like "this setting was changed elsewhere"
 
 (load "~/dotfiles/bindings.el")
+(server-start)
 
 (customize-set-variable 'menu-bar-mode nil)
 (customize-set-variable 'recentf-mode t)
