@@ -1,0 +1,3 @@
+git update-index --chmod=+x path/to/file
+
+source https://stackoverflow.com/questions/40978921/how-to-add-chmod-permissions-to-file-in-git
