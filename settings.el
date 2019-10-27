@@ -26,3 +26,6 @@
 
 ;; note there's also a cuda mode on Melpa
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+
+;; note that current frame parameters can be obtained by doing
+;; (assoc 'width (frame-parameters))
