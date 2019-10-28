@@ -40,7 +40,9 @@ copy_path_to_clipboard () {
 }
 
 generalized_help () {
-  if command -v $1 > /dev/null; then
+  if type $1 | grep 'shell builtin' >& /dev/null; then
+    help $1 |& less
+  elif command -v $1 > /dev/null; then
     $1 --help |& less
   else
     echo "command $1 doesn't exist"
