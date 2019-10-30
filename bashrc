@@ -18,6 +18,12 @@ alias u=pull_dotfiles_from_github
 alias y=commit_and_push_dotfiles_to_github
 alias e=open_emacsclient_ampersand
 
+alias cdd=cd_to_containing_dir
+
+cd_to_containing_dir () {
+  cd $(dirname "$1")
+}
+
 open_emacsclient_ampersand () {
   emacsclient $1 &
 }
