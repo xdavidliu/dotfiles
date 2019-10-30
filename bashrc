@@ -15,8 +15,10 @@ alias t=type
 alias h=generalized_help
 alias p=copy_path_to_clipboard
 alias u=pull_dotfiles_from_github
-alias y=commit_and_push_dotfiles_to_github
+alias y=commit_and_push
 alias e=open_emacsclient_ampersand
+alias gs='git status'
+
 
 alias cdd=cd_to_containing_dir
 
@@ -29,12 +31,13 @@ open_emacsclient_ampersand () {
 }
 
 pull_dotfiles_from_github () {
-  cd ~/dotfiles
-  git pull origin master
+  (
+    cd ~/dotfiles
+    git pull origin master
+  )
 }
 
-commit_and_push_dotfiles_to_github () {
-  cd ~/dotfiles
+commit_and_push () {
   git commit -a && git push origin master
 }
 
