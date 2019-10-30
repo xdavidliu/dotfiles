@@ -7,6 +7,8 @@
 (load "~/dotfiles/bindings.el")
 (server-start)
 
+(column-number-mode)
+
 (customize-set-variable 'menu-bar-mode nil)
 (customize-set-variable 'recentf-mode t)
 (customize-set-variable 'scroll-bar-mode nil)
