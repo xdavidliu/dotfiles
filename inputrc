@@ -12,7 +12,8 @@
 # https://unix.stackexchange.com/questions/548726/bash-readline-inputrc-bind-key-to-a-sequence-of-multiple-commands/548732#548732
 
 # originally just transposes character
-"\C-t": edit-and-execute-command
+# "\C-t": edit-and-execute-command
+# update: don't use this, since using C-t for new tab in gnome terminal
 
 # note that C-M-e is by default shell-expand-line, and there is also
 # alias-expand-line and history-and-alias-expand-line.
