@@ -8,6 +8,7 @@
 (server-start)
 
 (column-number-mode)
+(electric-pair-mode)
 
 (customize-set-variable 'menu-bar-mode nil)
 (customize-set-variable 'recentf-mode t)
