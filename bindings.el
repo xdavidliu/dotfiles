@@ -117,10 +117,22 @@
 ;; (global-set-key (kbd "C-<bracketleft>") 'ignore)
 ;; "C-]" is abort-recursive-edit; useful for leaving minibuffer
 
-(global-unset-key (kbd "M-{"))  ;; backward-paragraph
-(global-unset-key (kbd "M-}"))  ;; forward-paragraph
 (global-set-key (kbd "M-[") 'backward-paragraph)
+(global-set-key (kbd "M-{") 'backward-paragraph-with-shift-select)
 (global-set-key (kbd "M-]") 'forward-paragraph)
+(global-set-key (kbd "M-}") 'forward-paragraph-with-shift-select)
+
+"emacs.stackexchange.com/a/22166/93"
+(defun backward-paragraph-with-shift-select ()
+  (interactive)
+  (setq this-command-keys-shift-translated t)
+  (call-interactively 'backward-paragraph))
+
+(defun forward-paragraph-with-shift-select ()
+  (interactive)
+  (setq this-command-keys-shift-translated t)
+  (call-interactively 'forward-paragraph))
+
 
 ;; some keys that are redundant but work like in Chrome, so I may or may not rebind these
 (defun backward-kill-line () (interactive) (kill-line 0))
