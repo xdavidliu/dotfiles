@@ -219,7 +219,7 @@
 ;; (global-set-key (kbd "M-SPC") 'ignore) ;; just-one-space
 ;; C-SPC is set-mark-command; very useful
 
-;; C-\  toggle-input-method, for TeX; actually useful
+(global-set-key (kbd "C-\\") 'kill-current-buffer)  ;; toggle-input-method
 ;; M-\  delete-horizontal-space; actually useful
 ;; C-/  undo: obviously useful
 ;; M-/  dabbrev-expand (wow! this is super nice!)
