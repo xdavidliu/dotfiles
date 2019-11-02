@@ -173,18 +173,22 @@
 
 (global-set-key (kbd "C-h") 'mark-whole-buffer) ;; help prefix, same as F1
 
-(defun find-or-info-file (filename)
-  (if (string-suffix-p ".info" filename)
-      (info filename)
-    (find-file filename)))
+(string-prefix-p "http" "htp://www.google.com")
+
+(defun smart-find-file (filename)
+  (cond ((string-prefix-p "http" filename)
+         (eww filename))
+        ((string-suffix-p ".info" filename)
+         (info filename))
+        (t (find-file filename))))
 
 ;; take last copied string from clipboard, treat it as a filename, and
 ;; either use info on it if it ends in '.info', or visit it otherwise
-(defun find-or-info-clipbard ()
+(defun smart-find-file-clipboard ()
   (interactive)
-  (find-or-info-file (current-kill 0)))
+  (smart-find-file (current-kill 0)))
 
-(global-set-key (kbd "C-,") 'find-or-info-clipbard)
+(global-set-key (kbd "C-,") 'smart-find-file-clipboard)
 (global-set-key (kbd "M-,") 'find-file) ;; xref-pop-marker-stack
 
 (global-set-key (kbd "C-.") 'recompile)
