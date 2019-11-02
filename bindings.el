@@ -194,8 +194,11 @@
 (global-set-key (kbd "C-.") 'recompile)
 (global-set-key (kbd "M-.") 'compile) ;; xref-find-definitions
 
-;; (global-set-key (kbd "C-=") 'ignore)
-;; (global-set-key (kbd "M-=") 'ignore) ;; count-words-region
+(defun yank-above () (interactive) (newline-above) (yank))
+(defun yank-below () (interactive) (newline-below) (yank))
+
+(global-set-key (kbd "C-=") 'yank-below)
+(global-set-key (kbd "M-=") 'yank-above) ;; count-words-region
 ;; (global-set-key (kbd "C--") 'ignore) ;; negative-argument
 ;;                      "M--" is also negative-argument
 
