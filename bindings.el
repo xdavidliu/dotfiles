@@ -72,13 +72,34 @@
 ;; enables saving in both customize buffers and the textboxes in them
 ;; and also in customize-themes
 
+(defun end-semicolon-then-newline ()
+  (interactive)
+  (move-end-of-line nil)
+  (insert-char ?\;)
+  (newline)
+  (indent-for-tab-command))
+
 (let ((S-return (kbd "S-<return>")))
   (define-key emacs-lisp-mode-map S-return 'eval-last-sexp)
-  (define-key lisp-interaction-mode-map S-return 'eval-last-sexp))
+  (define-key lisp-interaction-mode-map S-return 'eval-last-sexp)
+  (define-key c++-mode-map S-return 'end-semicolon-then-newline))
 
 ;; (global-set-key (kbd "S-<return>") 'ignore)
 ;; (global-set-key (kbd "C-<return>") 'ignore)
 ;; (global-set-key (kbd "M-<return>") 'ignore)
+
+
+;; from stackoverflow.com/questions/11689948/
+(defun select-current-line ()
+  (interactive)
+  (move-beginning-of-line nil)
+  (set-mark-command nil)
+  (move-end-of-line nil)
+  (setq deactivate-mark nil))
+
+;; rationale: C-S-a and -e select until begin and until end
+;; so s, which is right between, selects whole line
+(global-set-key (kbd "C-S-s") 'select-current-line)
 
 (let ((backtab (kbd "<backtab>"))) ;; shift tab
   (define-key emacs-lisp-mode-map backtab 'completion-at-point)
