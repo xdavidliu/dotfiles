@@ -27,7 +27,7 @@ cd_to_containing_dir () {
 }
 
 open_emacsclient_ampersand () {
-  emacsclient $1 &
+  emacsclient ${1-~/Documents} -a emacs >& /dev/null &
 }
 
 pull_dotfiles_from_github () {
