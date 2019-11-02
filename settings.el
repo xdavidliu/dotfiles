@@ -18,6 +18,7 @@
 (customize-set-variable 'make-backup-files nil)
 (customize-set-variable 'show-paren-mode t)
 (customize-set-variable 'truncate-lines t)
+(customize-set-variable 'compilation-ask-about-save nil)
 
 (customize-set-variable 'tramp-use-ssh-controlmaster-options nil)
 ;; counterintuitively, set tramp-use-ssh-controlmaster-options to nil
@@ -26,6 +27,7 @@
 
 
 (add-hook 'text-mode-hook 'visual-line-mode)
+(add-hook 'text-mode-hook 'variable-pitch-mode)
 
 ;; note there's also a cuda mode on Melpa
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))

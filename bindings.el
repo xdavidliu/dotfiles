@@ -148,7 +148,7 @@
 
 (global-set-key (kbd "M-t") 'visual-line-mode) ;; transpose-words
 (global-set-key (kbd "C-t") 'toggle-truncate-lines) ;; transpose-chars
-(global-set-key (kbd "M-c") 'compile) ;; capitalize-word
+;; (global-set-key (kbd "M-c") 'ignore)  ;; capitalize-word
 
 ;; C-j is newline without indentation, which might be useful
 ;; (global-set-key (kbd "M-j") 'ignore) ;; indent-new-comment-line
@@ -186,8 +186,9 @@
 
 (global-set-key (kbd "C-,") 'find-or-info-clipbard)
 (global-set-key (kbd "M-,") 'find-file) ;; xref-pop-marker-stack
-;; (global-set-key (kbd "C-.") 'ignore)
-;; (global-set-key (kbd "M-.") 'ignore) ;; xref-find-definitions
+
+(global-set-key (kbd "C-.") 'recompile)
+(global-set-key (kbd "M-.") 'compile) ;; xref-find-definitions
 
 ;; (global-set-key (kbd "C-=") 'ignore)
 ;; (global-set-key (kbd "M-=") 'ignore) ;; count-words-region
