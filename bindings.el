@@ -134,9 +134,12 @@
   (setq this-command-keys-shift-translated t)
   (call-interactively 'forward-paragraph))
 
-(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
+(defun kill-whole-line-and-indent ()
+  (interactive)
+  (kill-whole-line 0)
+  (indent-for-tab-command))
 
-(global-set-key (kbd "C-<backspace>") 'kill-current-buffer)
+(global-set-key (kbd "C-<backspace>") 'kill-whole-line-and-indent)
 ;; (global-set-key (kbd "C-<delete>") 'ignore)
 
 ;; (global-set-key (kbd "S-<delete>") 'ignore)  ;; kill-region, same as C-w
@@ -158,10 +161,11 @@
 ;; (global-set-key (kbd "M-e") 'ignore) ;; forward-sentence
 ;; (global-set-key (kbd "M-a") 'ignore) ;; backward-sentence
 
-;; don't use this; I have C-q set to close window in Cinnamon,
-;; since a lot of programs already use this, like Nemo and VLC, and also
-;; C-q never means anything else, e.g. in Chrome it does nothing.
-;; (global-set-key (kbd "C-q") 'ignore) ;; quoted-insert
+;; while C-q often means close window in other programs, like Nemo
+;; and VLC, I won't set it to close window in Cinnamon, because it's
+;; close to C-w which is close tab in Chrome
+(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-q") 'kill-current-buffer) ;; quoted-insert
 
 ;; (global-set-key (kbd "M-q") 'ignore) ;; fill-paragraph
 
