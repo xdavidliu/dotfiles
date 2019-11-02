@@ -86,7 +86,8 @@
 
 ;; let cinnamon have "M-<tab>", because that seems standard;
 ;; windows 10, cinnamon, and gnome all obey this!
-(global-set-key (kbd "C-<tab>") 'other-window)
+
+;; (global-set-key (kbd "C-<tab>") 'ignore)
 (defun other-window-previous () (interactive) (other-window -1))
 (global-set-key (kbd "C-S-<iso-lefttab>") 'other-window-previous)
 ;; (global-set-key (kbd "<backtab>") 'ignore) ;; shift tab
@@ -133,10 +134,9 @@
   (setq this-command-keys-shift-translated t)
   (call-interactively 'forward-paragraph))
 
+(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
 
-;; some keys that are redundant but work like in Chrome, so I may or may not rebind these
-(defun backward-kill-line () (interactive) (kill-line 0))
-(global-set-key (kbd "C-<backspace>") 'backward-kill-line)
+(global-set-key (kbd "C-<backspace>") 'kill-current-buffer)
 ;; (global-set-key (kbd "C-<delete>") 'ignore)
 
 ;; (global-set-key (kbd "S-<delete>") 'ignore)  ;; kill-region, same as C-w
@@ -194,8 +194,8 @@
 ;; gsettings set org.cinnamon.desktop.keybindings.wm switch-group []
 ;; M-` is tmm-menubar, probably useful
 
-(defun kill-current-buffer () (interactive) (kill-buffer (current-buffer)))
-(global-set-key (kbd "C-`") 'kill-current-buffer)
+
+;; (global-set-key (kbd "C-`") 'ignore)
 ;; (global-set-key (kbd "C-'") 'ignore)
 ;; (global-set-key (kbd "M-'") 'ignore) ;; abbrev-prefix-mark
 
@@ -219,7 +219,7 @@
 ;; (global-set-key (kbd "M-SPC") 'ignore) ;; just-one-space
 ;; C-SPC is set-mark-command; very useful
 
-(global-set-key (kbd "C-\\") 'kill-current-buffer)  ;; toggle-input-method
+(global-set-key (kbd "C-\\") 'other-window)  ;; toggle-input-method
 ;; M-\  delete-horizontal-space; actually useful
 ;; C-/  undo: obviously useful
 ;; M-/  dabbrev-expand (wow! this is super nice!)
