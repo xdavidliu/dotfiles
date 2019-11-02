@@ -38,7 +38,7 @@ pull_dotfiles_from_github () {
 }
 
 commit_and_push () {
-  git commit -a && git push origin master
+  git commit -a -m 'change some stuff' && git push origin master
 }
 
 copy_path_to_clipboard () {
