@@ -79,10 +79,14 @@
   (newline)
   (indent-for-tab-command))
 
-(let ((S-return (kbd "S-<return>")))
-  (define-key emacs-lisp-mode-map S-return 'eval-last-sexp)
-  (define-key lisp-interaction-mode-map S-return 'eval-last-sexp)
-  (define-key c++-mode-map S-return 'end-semicolon-then-newline))
+;; can't use let because of c++-mode-map not working with lexical
+(defvar kbd-S-return (kbd "S-<return>"))
+(define-key emacs-lisp-mode-map kbd-S-return 'eval-last-sexp)
+(define-key lisp-interaction-mode-map kbd-S-return 'eval-last-sexp)
+(add-hook
+ 'c++-mode-hook
+ (lambda ()
+   (define-key c++-mode-map kbd-S-return 'end-semicolon-then-newline)))
 
 ;; (global-set-key (kbd "S-<return>") 'ignore)
 ;; (global-set-key (kbd "C-<return>") 'ignore)
