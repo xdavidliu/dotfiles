@@ -18,6 +18,7 @@ alias u=pull_dotfiles_from_github
 alias y=commit_and_push
 alias e=open_emacsclient_ampersand
 alias gs='git status'
+alias xo=xdg-open
 
 
 alias cdd=cd_to_containing_dir
