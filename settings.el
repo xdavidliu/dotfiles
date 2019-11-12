@@ -19,6 +19,8 @@
 (customize-set-variable 'show-paren-mode t)
 (customize-set-variable 'truncate-lines t)
 (customize-set-variable 'compilation-ask-about-save nil)
+(customize-set-variable 'compilation-scroll-output 'first-error)
+
 
 (customize-set-variable 'tramp-use-ssh-controlmaster-options nil)
 ;; counterintuitively, set tramp-use-ssh-controlmaster-options to nil
