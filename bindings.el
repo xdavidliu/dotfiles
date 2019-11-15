@@ -114,7 +114,7 @@
 
 ;; (global-set-key (kbd "C-<tab>") 'ignore)
 (defun other-window-previous () (interactive) (other-window -1))
-(global-set-key (kbd "C-S-<iso-lefttab>") 'other-window-previous)
+;; (global-set-key (kbd "C-S-<iso-lefttab>") 'ignore)
 ;; (global-set-key (kbd "<backtab>") 'ignore) ;; shift tab
 
 ;; emacs.stackexchange.com/questions/220
@@ -257,6 +257,7 @@
 ;; C-SPC is set-mark-command; very useful
 
 (global-set-key (kbd "C-\\") 'other-window)  ;; toggle-input-method
+(global-set-key (kbd "C-|") 'other-window-previous)
 ;; M-\  delete-horizontal-space; actually useful
 ;; C-/  undo: obviously useful
 ;; M-/  dabbrev-expand (wow! this is super nice!)
