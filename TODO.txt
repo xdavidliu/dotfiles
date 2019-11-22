@@ -1,0 +1,19 @@
+important: add emacs registers, e.g. saving and loading positions
+
+idea: have y in bash do _both_ repos, and, only commit if git status shows diffs; also post stackoverflow thread asking how to permanently cache password using http mode without ssh mode
+
+idea: have C-o and M-o in emacs also tab indent when you start new line
+
+idea: in emacs, have key that moves split divider left or right, INDEPENDENT of which window you are in. Also up and down.
+
+encrypt my github password into a text file, then use gpg to unencrypt it every single time I git push,
+
+for the y git commit and push shortcut, only commit if  git status has diffs; otherwise go directly to pushing, since sometimes you may enter wrong password
+
+dotfile idea: in emacs, use a mode-hook to have single-character keys in when you use the specific mode called "view-mode" (since in that mode most self-insert keys are useless anyway), e.g. A and Z for page up and down, and also have single key to toggle between view mode, like C-q or something
+
+dotfile idea: in C++ mode in emacs, have hotkeys automatically create classes and functions when given a name, and also put the cursor right inside the function
+
+dot-emacs idea: keys to paste into line above and line below
+
+for emacs, revert buffer g, e.g. in dired, the help function says it actually "implements an interface". Elisp functions can implement interface? That is absolutely news to me! Examine this more.
