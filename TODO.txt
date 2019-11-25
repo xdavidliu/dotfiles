@@ -17,3 +17,6 @@ dotfile idea: in C++ mode in emacs, have hotkeys automatically create classes an
 dot-emacs idea: keys to paste into line above and line below
 
 for emacs, revert buffer g, e.g. in dired, the help function says it actually "implements an interface". Elisp functions can implement interface? That is absolutely news to me! Examine this more.
+
+have key to automatically refresh current file buffer
+in C++ mode, have Shift + Ret _not_ insert a ; if line begins with pound include
