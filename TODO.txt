@@ -1,5 +1,18 @@
 important: add emacs registers, e.g. saving and loading positions
 
+# note about PS1 ANSI escape codes
+# from man bash, search for \\@ and note that \[ and \] are to denote non-
+# printing escape sequences. Also, the \033 is octal for ascii character 27,
+# which can also be written 0x1b. The 0m at the end just sets back to default
+# I think. The ;33 is yellow. TODO: currently PS1 is set in everywhere _except_
+# dotfiles bashrc. I should move it there, and also wrap the color setting into
+# a very readable layer of abstraction, like a bash function or something that
+# turns text colors, for example, the below:
+#   color yellow foobar
+# should return \[\033...33\]foobar\[0m\] or something like that,
+# and also comment it very clearly with links to references for colors. 
+
+
 # put battery inside PS1, that way C-l won't make it disappear
 # comment out PROMPT_COMMAND
 BAT_CMD='$(echo -n $(</sys/class/power_supply/BAT0/capacity))'
