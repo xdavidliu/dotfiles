@@ -27,6 +27,32 @@ cd_to_containing_dir () {
   cd $(dirname "$1")
 }
 
+# TODO: Use org-mode to collapse comments.
+# TODO: Remove existing PS1 settings and write new ones using this.
+ansi_colorize () {
+  # Make text colored. Usages:
+  # echo -e "$(ansi_colorize foo bar baz)"
+  #   ^ prints 'foo bar baz' in red
+  # printf "$(ansi_colorize foo bar baz)\n"
+  #   ^ prints 'foo bar baz' in red
+  # PS1="$(ansi_colorize ' \W \@ ')"
+  #   ^ sets PS1 prompt to red with current directory and time.
+  # TODO: Use a switch statement or associative array to get the "main" colors.
+  local code=31 # Red; see Wikipedia for 'Ansi Escape Codes'.
+  echo "\033[01;${code}m$*\033[0m"
+  # We use echo, without -e, in order to return the raw string when used with
+  # $(...), since bash has no return statements.
+  # The $* allows colorizing unquoted multiple arguments.
+  # The double quotes may prevent arbitrary code execution, though I currently
+  # cannot think of any examples.
+  # This format was taken from the default bashrc from Ubuntu.
+  # Note the original had \[ and \], which are optional for PS1, but
+  # printed literally if used with printf or echo -e, so it's strictly better
+  # to omit them.
+  # \033 is the octal for the ESC ASCII character.
+  # Using \x1b instead of the octal works exactly the same.
+}
+
 open_emacsclient_ampersand () {
   emacsclient ${1-~/Documents} -a emacs >& /dev/null &
 }
