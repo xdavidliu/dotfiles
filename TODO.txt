@@ -1,5 +1,10 @@
 important: add emacs registers, e.g. saving and loading positions
 
+# put battery inside PS1, that way C-l won't make it disappear
+# comment out PROMPT_COMMAND
+BAT_CMD='$(echo -n $(</sys/class/power_supply/BAT0/capacity))'
+PS1='\[\033[01;33m\]'$BAT_CMD' \W \@ \[\033[00m\]'
+
 idea: have y in bash do _both_ repos, and, only commit if git status shows diffs; also post stackoverflow thread asking how to permanently cache password using http mode without ssh mode
 
 idea: have C-o and M-o in emacs also tab indent when you start new line
