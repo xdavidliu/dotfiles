@@ -37,5 +37,12 @@
 ;; note there's also a cuda mode on Melpa
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 
+;; Just use c-mode for flex and bison files. Note that in melpa
+;; (but not melpa-stable), there is a bison-mode that claims to work for
+;; both bison and flex, but it's un-usable: it indents and jumps all over the
+;; place and is generally frustrating to use.
+(add-to-list 'auto-mode-alist '("\\.l\\'" . c-mode))
+(add-to-list 'auto-mode-alist '("\\.y\\'" . c-mode))
+
 ;; note that current frame parameters can be obtained by doing
 ;; (assoc 'width (frame-parameters))
