@@ -6,6 +6,11 @@
 
 (load "~/dotfiles/bindings.el")
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+;; to make package-refresh-contents work
+;; necessary due to bug in emacs <26.3
+;; https://www.reddit.com/r/emacs/comments/cdei4p/failed_to_download_gnu_archive_bad_request/
+
 (column-number-mode)
 (electric-pair-mode)
 
