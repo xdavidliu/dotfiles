@@ -1,9 +1,9 @@
 ;; This dotfile makes Edwin a lot more usable.
 ;; for use with Edwin editor for mit-scheme. Rename this file ~/.edwin, then run edwin with
-;; mit-scheme -edit.
+;; mit-scheme -edit. (As I write this, I'm using Debian Buster 10 with mit-scheme installed using apt).
 
 ;; Further notes: to use this with scmutils, which is the package for SICM, download the tarball
-;; from [1], sudo ./install.sh, then sudo cp mechanics.sh /usr/local/bin. Then run
+;; from [1], sudo ./install.sh, then sudo cp mechanics.sh /usr/local/bin/mechanics. Then run
 ;; mechanics -edit.
 ;; To get show-expression to pop out a latex expression, you must install texlive first, then it
 ;; should work.
