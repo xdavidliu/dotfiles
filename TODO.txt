@@ -25,3 +25,15 @@ for emacs, revert buffer g, e.g. in dired, the help function says it actually "i
 
 have key to automatically refresh current file buffer
 in C++ mode, have Shift + Ret _not_ insert a ; if line begins with pound include
+
+random notes taken from google keep:
+=====================================
+https://unix.stackexchange.com/questions/370352/control-backlight-as-a-user-without-xbacklight
+
+put note about apt install libnotify-bin in popup switchfile
+
+package-refresh-contents fails for emacs < 26.3. Debian buster 10 is 26.1.
+Solution is here: 
+https://www.reddit.com/r/emacs/comments/cdei4p/failed_to_download_gnu_archive_bad_request/
+just put that in .emacs
+
