@@ -1,23 +1,24 @@
 ;; This dotfile makes Edwin a lot more usable.
-;; for use with Edwin editor for mit-scheme. Rename this file ~/.edwin, then run edwin with
-;; mit-scheme -edit. (As I write this, I'm using Debian Buster 10 with mit-scheme installed using apt).
+;; for use with Edwin editor for mit-scheme. Rename this file ~/.edwin,
+;; then run edwin with mit-scheme -edit. (As I write this, I'm using
+;; Debian Buster 10 with mit-scheme installed using apt).
 
-;; Further notes: to use this with scmutils, which is the package for SICM, download the tarball
-;; from [1], sudo ./install.sh, then sudo cp mechanics.sh /usr/local/bin/mechanics. Then run
-;; mechanics -edit.
-;; To get show-expression to pop out a latex expression, you must install texlive first, then it
-;; should work.
+;; Further notes: to use this with scmutils, which is the package for SICM,
+;; download the tarball from [1], sudo ./install.sh, then sudo cp mechanics
+;; .sh /usr/local/bin/mechanics. Then run mechanics -edit.
+;; To get show-expression to pop out a latex expression, you must install
+;; texlive first, then it should work.
 ;; [1] http://groups.csail.mit.edu/mac/users/gjs/6946/installation.html
 
 ((ref-command set-font)
   "-adobe-courier-bold-r-normal--24-240-75-75-m-150-iso8859-1")
 
-((ref-command set-background-color) "black")
-((ref-command set-foreground-color) "white")
+;; ((ref-command set-background-color) "black")
+;; ((ref-command set-foreground-color) "white")
 
 ;; Interestingly, if I put this _before_ set-background-color, then the
 ;; matching-parenthesis cursor doesn't show properly.
-((ref-command set-cursor-color) "white")
+;; ((ref-command set-cursor-color) "white")
 
 ;; Width is 78 to display the splash text in the Scheme buffer properly.
 ((ref-command set-frame-size) 78 38)
