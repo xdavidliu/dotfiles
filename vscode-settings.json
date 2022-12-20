@@ -1,0 +1,14 @@
+{
+    "window.zoomLevel": 1.5,
+    "[plaintext]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "other": "off"
+        }
+    },
+    "editor.minimap.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "window.titleBarStyle": "custom",
+    "window.customMenuBarAltFocus": false,
+    "workbench.startupEditor": "none"
+}
