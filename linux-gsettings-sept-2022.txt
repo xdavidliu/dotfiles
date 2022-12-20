@@ -1,0 +1,60 @@
+ublock origin tooltip
+
+reddit.com##[id^="SubredditInfoTooltip--"]
+reddit.com##[id*="UserInfoTooltip"][id$="hover-id"]
+
+i had a reddit post on this from r/res
+
+
+gsettings set org.gnome.desktop.wm.preferences resize-with-right-button true
+gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
+gsettings set org.gnome.mutter edge-tiling false
+gsettings set org.gnome.desktop.interface clock-format '12h'
+gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.mutter center-new-windows true
+gsettings set org.gnome.desktop.interface cursor-size 48
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+
+# accessility -> large text
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+
+# https://superuser.com/a/1687344/882032
+# disable annoying emoji behavior
+gsettings set org.freedesktop.ibus.panel.emoji hotkey []
+
+# disable ctrl shift u (doesn't actually work though)
+# https://askubuntu.com/a/1375407/804149
+gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey  []
+
+# blank screen delay
+gsettings set org.gnome.desktop.session idle-delay 1800
+
+# Automatic screen lock delay # seconds after blank screen
+gsettings set org.gnome.desktop.screensaver lock-delay 3600
+
+# idle suspend delay
+# https://askubuntu.com/a/1021324/804149
+# gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 5400
+# turn off suspend entirely
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing
+
+# https://askubuntu.com/a/612913/804149
+gsettings set org.gnome.Evince allow-links-change-zoom false
+
+
+gnome terminal settings
+# https://wiki.gnome.org/Apps/Terminal/FAQ
+
+UUID="$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')"
+GSET_TERM="gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/"
+# gsettings list-keys works with this too!
+# deliberately no double quotes because needs to be multi-word
+$GSET_TERM audible-bell false
+$GSET_TERM scrollbar-policy never
+$GSET_TERM use-system-font false
+$GSET_TERM font 'Monospace 14'
+$GSET_TERM default-size-rows 28
+$GSET_TERM default-size-columns 85
+
+there's also one for Adwaita dark, though you don't need it for Fedora 36 because it has light / dark mode in settings itself
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
