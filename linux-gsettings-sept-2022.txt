@@ -41,6 +41,8 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type not
 # https://askubuntu.com/a/612913/804149
 gsettings set org.gnome.Evince allow-links-change-zoom false
 
+# for some variants of gnome, like glinux workstation
+gsettings set org.gnome.desktop.interface clock-show-seconds false
 
 gnome terminal settings
 # https://wiki.gnome.org/Apps/Terminal/FAQ
