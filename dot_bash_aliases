@@ -1,0 +1,72 @@
+ alias yt='. ~/Desktop/yt/bin/activate'
+ alias xo=xdg-open
+
+# because originally it has color and hard to read
+unalias ls
+
+# man bash -> PROMPTING
+# "\W     the basename of $PWD"
+PS1='\W $ '
+
+alias code='/home/xdavidliu/Desktop/VSCode-linux-x64/bin/code'
+# [1]
+
+alias chrome='/home/xdavidliu/Desktop/google-chrome-stable/opt/google/chrome/google-chrome &> /dev/null &'
+alias cr=chrome
+# [2]
+
+# https://unix.stackexchange.com/a/205807/281153
+# for what &> means
+
+# https://superuser.com/a/288333
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+# copy path to file
+pt () {
+    # https://askubuntu.com/a/597903/804149
+    # https://superuser.com/a/202654/882032
+    # https://stackoverflow.com/a/23110592/2990344
+    readlink -fn "$1" | xsel -b
+}
+
+tpt () {
+    touch "$1" && pt "$1"
+}
+
+c () {
+    # https://stackoverflow.com/a/6482403/2990344
+    if [ $# -eq 0 ]; then
+      cd && ls
+    else
+      cd "$1" && ls
+    fi
+}
+
+# https://askubuntu.com/a/1406617/804149
+# switches both legacy and "new-style" dark modes. terminal is legacy.
+dark () {
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+}
+
+light () {
+    gsettings set org.gnome.desktop.interface color-scheme prefer-light
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+}
+
+# [1] I have this instead of desktop icon because trying to avoid installing anything
+# using root (boss) account. For boss account, just install from official Debian repo.
+# Proper VSCode installation requires adding a Microsoft repo, similar to how Chrome
+# does it. That makes my system harder to reason about. Hence I "installed" VSCode
+# using official tar gz download which I just unzipped to ~/Desktop. Similar to how
+# Jetbrains IDEs do it.
+
+# [2] https://askubuntu.com/a/1105745/804149
+# Chrome installed this way doesn't seem to be able to update, so need to repeat every
+# so often. Also not sure if any security implications.
+# TO INSTALL
+# download the deb file, then `dpkg -x google-chrome-stable_current_amd64.deb .`
+# That will extract usr var and opt dirs. Move those to ~/opt/chrome-stable or wherever
+# you put it, which will overwrite previous version. History and other data are fine
+# since those are elsewhere.
